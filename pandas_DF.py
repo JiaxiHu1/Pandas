@@ -21,4 +21,18 @@ eva = grades["Eva"]
 sam = grades.Sam 
 
 
-#using the loc and iloc method
+#using the loc and iloc methods 
+test2 = grades.loc['Test2']
+
+test1 = grades.iloc[0]
+
+#for consecutive rows 
+#when we do a colun is consecutive rows 
+#when we use comma that's a nonconsecutive rows 
+test1_thru_test3 = grades.loc['Test1:Test3']
+test1_and_test3 = grades.loc[['Test1','Test3']]
+
+test1_and_test2 = grades.iloc[0:1]
+
+
+print()
