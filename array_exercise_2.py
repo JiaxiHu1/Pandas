@@ -23,14 +23,16 @@ print()
 
 ## Step 3: Print an array that will show which sales are greater than or equal to $100.
 print("-----------------------------------------------   STEP THREE  -----------------------------------------------")
-for i in salesArray:
-    if i.any() >= 100:
-        print(salesArray)
 
+print(salesArray[salesArray>=100])
 print()
 
 ## Step 4: Print the total sales for each register.
 print("-----------------------------------------------   STEP FOUR   -----------------------------------------------")
+
+#axis = 1 is each row 
+# = 0 is each column 
+#print(salesArray.sum(axis=1))
 print("total sale for register 1:",salesArray[0].sum())
 print("total sale for register 2:",salesArray[1].sum())
 print("total sale for register 3:",salesArray[2].sum())
@@ -42,7 +44,7 @@ print()
 #           Using the salesArray, create a new array that stores the 2% fee for each sale and register. Print the array and then print the total fees.
 print("-----------------------------------------------   STEP FIVE  -----------------------------------------------")
 new_salesArray = []
-new_salesArray = salesArray*0.02
+new_salesArray = salesArray*0.02 #brocasting 
 print(new_salesArray)
 
 totalfee = new_salesArray.sum()
@@ -61,6 +63,7 @@ print("-----------------------------------------------   STEP SEVEN  -----------
 print("total sale for register 2:",salesArray[1].sum())
 print("total sale for register 4:",salesArray[3].sum())
 
+#print(salesArray[[1,3]]) there will be an issue, wil put in a list 
 print()
 
 ## Step 8: Superstore has added a 5th cash register who's data is stored in the array newRegister. Add the new register to the original array. Print the updated salesArray.
@@ -74,8 +77,8 @@ print()
 ## Step 9: Register #3 had an error and recorded it's fourth sale ($200.14) incorrectly. The sale should have been $20.14. Update the array to correct this error.
 #           Print the array before and after the update to see the change.
 print("-----------------------------------------------   STEP NINE  -----------------------------------------------")
-raveled = salesArray.ravel()
-raveled[13] = 20.14
+a = salesArray.ravel()
+a[13] = 20.14
 
 print(salesArray)
 print()
