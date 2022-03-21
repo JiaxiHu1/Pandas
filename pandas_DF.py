@@ -29,10 +29,41 @@ test1 = grades.iloc[0]
 #for consecutive rows 
 #when we do a colun is consecutive rows 
 #when we use comma that's a nonconsecutive rows 
-test1_thru_test3 = grades.loc['Test1:Test3']
+test1_thru_test3 = grades.loc['Test1':'Test3']
 test1_and_test3 = grades.loc[['Test1','Test3']]
 
-test1_and_test2 = grades.iloc[0:1]
+test1_and_test2 = grades.iloc[0:2]
+
+#view only Eva's and Katie's grades for Test1 and Test2 
+#the first part is the column and the second part is the row 
+eva_katie_test1_test2 = grades.loc['Test1':'Test2',['Eva','Katie']]
+#or eva_katie_test1_test2 = grades.loc[:'Test2',['Eva','Katie']]
+
+#view only same's thru bob's grades for test 1 and test 3 
+sam_thru_bob_test1_test3 = grades.loc[['Test1','Test2'],'Sam':'Bob']
+# or sam_thru_bob_test1_test3 = grades.loc[['Test1','Test2'],'Sam':]
+#because bob is the up-limit 
+
+#create a data frame from everyone with a a or b grade 
+grade_A_or_B = grades[(grades >= 90) | (grades >= 80)]
+pd.set_option("precision",2)
+
+print(grades.describe())
+
+#by test 
+print(grades.T.describe())
+
+#exercise - get the average of all the students grades on each test 
+print(grades.T.mean())
+
+#sort rows by their indices (test name)
+r_sorted_grades_i = grades.sort_index(ascending=False)
+
+#sort columns by their column names (student names)
+#axis = 1 indicates to sort by column indices 
+#axis = 0 indicates to sort by row indices 
+c_sorted_grades_i = grades.sort_index(axis = 1,ascending=False)
+
 
 
 print()
